@@ -16,18 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework import routers
-from music import views as music_views
+from music import urls as music_urls
 
-router_music = routers.DefaultRouter()
-router_music.register('endpoint/', music_views.nomedaview)
-
-
-
-router = routers.DefaultRouter()
-router.registry.extend(router_music.registry)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
+    path('api/', include(music_urls)),
 ]
