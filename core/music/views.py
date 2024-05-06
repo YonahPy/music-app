@@ -23,9 +23,10 @@ class SearchTracks(APIView):
         id = resquest.GET.get('id', '')
         tags = resquest.GET.get('tags', '')
         offset = resquest.GET.get('offset', '')
+        fuzzytags = resquest.GET.get('fuzzytags', '')
         
         try:
-            r = requests.get(f'https://api.jamendo.com/v3.0/tracks/?client_id=4241b06f&format=jsonpretty&limit={limit}&imagesize=600&audioformat=mp32&search={search}&boost={boost}&id={id}&tags={tags}&offset={offset}')
+            r = requests.get(f'https://api.jamendo.com/v3.0/tracks/?client_id=4241b06f&format=jsonpretty&limit={limit}&imagesize=600&audioformat=mp32&search={search}&boost={boost}&id={id}&tags={tags}&offset={offset}&fuzzytags={fuzzytags}')
             
             if r.status_code == 200:
                 response = r.json()

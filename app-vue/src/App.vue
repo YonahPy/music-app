@@ -45,7 +45,7 @@
     </aside>
     
     
-    <main class="main">
+    <main class="main bg-black">
       <RouterView />
     </main>
   </div>
@@ -77,9 +77,7 @@ p, a{
   grid-template-rows: 80px auto;
   grid-template-areas:
   "lateral-bar superior-bar superior-bar superior-bar"
-  "lateral-bar main-content main-content main-content"
-  
-  
+  "lateral-bar main-content main-content main-content "
   ;
 }
 header{
@@ -103,7 +101,6 @@ main{
   background-color:black ;
   width: 15vw;
   padding: 20px 0px 0px 20px;
-  
 }
 .brand{
   margin-bottom: 40px;
